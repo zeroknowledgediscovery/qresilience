@@ -1,0 +1,5 @@
+#!/bin/bash
+
+FILE=$1
+n=`grep -n date $FILE | awk -F":" '{$1}'`
+sed -e "1,${((n-1))}d" $FILE
